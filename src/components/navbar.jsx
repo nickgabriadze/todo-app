@@ -19,7 +19,7 @@ export function NavigationBar() {
                         id='name-of-website' drag dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}>Todoer</motion.h1>
                     <div id='navigation'>
                         <motion.h3 whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}
-                            style={{ cursor: 'pointer' }}>All Tasks</motion.h3>
+                            style={{ cursor: 'pointer' }}>Filter</motion.h3>
                         <Link to="/add-new-task"><motion.h3 whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}
                             style={{ cursor: 'pointer' }}>Add New Task</motion.h3></Link>
                     </div>

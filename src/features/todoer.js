@@ -2,7 +2,23 @@ import { createSlice, nanoid } from "@reduxjs/toolkit";
 import { checkTask } from '../utils/checkTask.js';
 
 const initialState = {
-    todos: []
+    todos: [
+        {
+            id: nanoid(),
+            taskName: "Drink Water",
+            taskCategory: "Hydration",
+            taskImportance: "Extreme",
+            taskComplete: false,
+        }
+        ,
+        {
+            id: nanoid(),
+            taskName: "Workout",
+            taskCategory: "Health & Fitness",
+            taskImportance: "Extreme",
+            taskComplete: false,
+        }
+    ]
 }
 
 const todoReducer = createSlice({
@@ -31,9 +47,18 @@ const todoReducer = createSlice({
                 state.todos = newTodos;
                 
             }
+        },
+
+        changeTaskCompleteStatus: (state, action) => {
+            let id = action.payload.todoTaskId;
+            for(let i = 0; i < state.todos.length; i++){
+                if(state.todos[i].id === id){
+                    state.todos[i].taskComplete = !state.todos[i].taskComplete;
+                }
+            }
         }
     }
 })
 
-export const { addTask } = todoReducer.actions;
+export const { addTask,changeTaskCompleteStatus } = todoReducer.actions;
 export default todoReducer.reducer;

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Poppins:wght@300&family=Silkscreen&display=swap');
+
+.todo-tasks {
+    margin-top: 120px;
+    padding: 10px;
+
+}
+
+#todo-task-wrapper > div {
+    display: flex;
+    font-family: 'Oxygen', 'monospace', 'sans-serif';
+    font-size: larger;
+    width: 100%;
+    padding: 10px;
+    align-items: center;
+    border-radius: 5px;
+    -moz-box-shadow: -1px 4px 5px 5px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 5px #89899C;
+    box-shadow: -1px 4px 5px 5px #89899C;
+}
+
+#todo-task-wrapper {
+    margin-bottom: 20px;
+}
+
+#check-mark{    
+    cursor:pointer;
+}

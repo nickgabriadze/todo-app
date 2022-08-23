@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Poppins:wght@300&family=Silkscreen&display=swap');
+
+.add-new-task{
+    padding-top: 20px;
+    
+}
+.input-field{
+   position: absolute;
+   top: 50%;
+   left:50%;
+   transform: translate(-50%, -50%);
+   width: 80%;
+   height: 65%;
+   border-radius: 8px;
+   background-color: white;
+   -moz-box-shadow: -1px 4px 5px 3px #89899C;
+   -webkit-box-shadow: -1px 4px 5px 3px #89899C;
+   box-shadow: -1px 4px 5px 3px #89899C;
+   font-family: 'Poppins', 'monospace', 'sans-serif';
+
+}
+
+#go-back{
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+    width:40px;
+    padding-top: 20px;
+}
+
+input{
+    border: 0 solid white;
+    outline: none;
+    border-radius: 5px;
+    height: 30px;
+    font-size: 20px;
+    -moz-box-shadow: -1px 4px 5px 3px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 3px #89899C;
+    box-shadow: -1px 4px 5px 3px #89899C;
+}
+input:focus{
+    outline: none;
+}
+
+#inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap:30px;
+    padding-top: 20px;
+}
+
+#inputs h2{
+    text-align: center;
+}
+
+#btn-add-task{
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px;
+    color: black;
+    cursor:pointer;
+    width: fit-content;
+    font-family:'Silkscreen', 'monospace', 'sans-serif';
+    -moz-box-shadow: -1px 4px 5px 3px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 3px #89899C;
+    box-shadow: -1px 4px 5px 3px #89899C;
+}
+
+#important-buttons div{
+    margin-top:5px;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px;
+    color: black;
+    cursor:pointer;
+    font-family:'Poppins', 'monospace', 'sans-serif';
+    -moz-box-shadow: -1px 4px 5px 3px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 3px #89899C;
+    box-shadow: -1px 4px 5px 3px #89899C;
+}

@@ -113,7 +113,7 @@ export function NewTask() {
                                     
                                 }}
                                 id='btn-add-task'>Add Task</motion.div>
-                            {weShouldPost && <motion.p>{add}</motion.p>}
+                            {weShouldPost && <motion.p id='success'>{add}</motion.p>}
                         </div>
 
                     </div>

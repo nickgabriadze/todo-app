@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&family=Poppins:wght@300&family=Silkscreen&display=swap');
+
+.filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+}
+
+#filter-by-category {
+    padding-bottom: 10px;
+    font-family: 'Poppins', 'monospace', 'sans-serif';
+}
+
+#filter-icon {
+    width: 30px;
+}
+
+#filter-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    -moz-box-shadow: -1px 4px 5px 1px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 1px #89899C;
+    box-shadow: -1px 4px 5px 2px #89899C;
+}
+
+#actual-filter-input {
+    box-shadow: none;
+    border-radius: 5px;
+    width: 100%;
+    margin-right: 5px;
+    background-color: transparent;
+}
+
+#check-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: white;
+    -moz-box-shadow: -1px 4px 5px 1px #89899C;
+    -webkit-box-shadow: -1px 4px 5px 1px #89899C;
+    box-shadow: -1px 4px 5px 2px #89899C;
+}
+
+#row {
+    display: flex;
+    flex-direction: row;
+}

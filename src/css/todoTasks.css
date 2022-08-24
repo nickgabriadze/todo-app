@@ -3,13 +3,14 @@
 .todo-tasks {
     padding: 10px;
     margin-top: 40px;
+
 }
 
 #todo-task-wrapper > div {
     display: flex;
     font-family: 'Oxygen', 'monospace', 'sans-serif';
     font-size: larger;
-    width: 100%;
+    width: 95%;
     padding: 10px;
     align-items: center;
     border-radius: 5px;
@@ -22,6 +23,10 @@
     margin-bottom: 20px;
     word-wrap: break-word;
     word-break: break-all;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #check-mark{    

@@ -16,7 +16,11 @@ export function TodoTasks() {
             <div className="todo-tasks" style={{ marginTop: weFilter ? '20px' : '140px' }}>
                 {!weFilter && todoTasks.map((todoTask) => {
                     return (
-                        <div key={todoTask.id} id='todo-task-wrapper'>
+                        <motion.div
+                            initial={{ x: -200 }}
+                            animate={{ x: 0 }}
+                            transition={{ type: 'spring', duration: 2, stiffness: 100 }}
+                            key={todoTask.id} id='todo-task-wrapper'>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '20px' }}>
                                 <div>
                                     <p className='descriptions'>Task Name</p>
@@ -39,13 +43,17 @@ export function TodoTasks() {
                                     {todoTask.taskComplete ? "✅" : "☑️"}
                                 </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
 
                 {weFilter && filteredTodos.map((todoTask) => {
                     return (
-                        <div key={todoTask.id} id='todo-task-wrapper'>
+                        <motion.div 
+                        initial={{x: 500}}
+                        animate={{x : 0}}
+                        transition={{ type: 'spring', duration: 2, stiffness: 100 }}
+                        key={todoTask.id} id='todo-task-wrapper'>
                             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: '20px' }}>
                                 <div>
                                     <p className='descriptions'>Task Name</p>
@@ -68,7 +76,7 @@ export function TodoTasks() {
                                     {todoTask.taskComplete ? "✅" : "☑️"}
                                 </motion.div>
                             </div>
-                        </div>
+                        </motion.div>
                     )
                 })}
 

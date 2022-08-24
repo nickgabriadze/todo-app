@@ -27,7 +27,7 @@ export function NavigationBar() {
                                 dispatch(changeFilterOption(!weFilter))
                             }}
                             whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}
-                            style={{ cursor: 'pointer' }}>Filter</motion.h3>
+                            style={{ cursor: 'pointer' }}>{weFilter ? "Main Page" : "Filter"}</motion.h3>
                         <Link to="/add-new-task"><motion.h3 whileTap={{ scale: 0.8 }} whileHover={{ scale: 1.1 }}
                             style={{ cursor: 'pointer' }}>Add New Task</motion.h3></Link>
                     </div>

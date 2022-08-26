@@ -56,7 +56,6 @@
 
 #options-border {
     width: 350px;
-    height: 90px;
     border-radius: 10px;
     -moz-box-shadow: -1px 4px 5px 1px #89899C;
     -webkit-box-shadow: -1px 4px 5px 1px #89899C;
@@ -72,7 +71,7 @@
     font-family: 'Oxygen', 'monospace', 'sans-serif';
     padding: 10px;
     width: 350px;
-    height: 40px;
+    height: 50px;
     cursor: pointer;
 }
 

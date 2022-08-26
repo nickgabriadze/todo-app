@@ -5,6 +5,7 @@ import { store } from './app/store';
 import TodoApp from './Todo.js';
 import NewTask from './components/newTask';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Filter from './components/filter.jsx';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -16,6 +17,7 @@ root.render(
       <Routes>
       <Route path="/" element={<TodoApp />} />
       <Route path="/add-new-task" element={<NewTask />} />
+      <Route path="/edit" element={<Filter />} />
       </Routes>
     </Provider>
     </BrowserRouter>

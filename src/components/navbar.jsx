@@ -22,6 +22,14 @@ export function NavigationBar() {
                     <motion.h1 style={{ cursor: 'pointer' }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.8 }}
+                        onClick={() => {
+                            setCompleted("UnCompleted");
+                            dispatch(changeMainFilter({
+                                filter: "Every Task"
+                            }))
+                          
+                      
+                        }}
                         id='name-of-website' drag dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}>Todoer</motion.h1>
                     <div id='navigation'>
                         <motion.h3 

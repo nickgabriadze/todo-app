@@ -13,14 +13,10 @@ export function Filter() {
     const [category, setCategory] = useState('');
     const categories = Array.from(new Set(useSelector((state) => state.todoReducer).todos.map(obj => obj.taskCategory)));
 
-    const[styleForOptions, setStyleForOptions] =useState( {
+    const [styleForOptions, setStyleForOptions] = useState({
         height: '100px',
         overflowY: 'scroll'
     });
-
-    const animateOnShow = {
-        y: [-100, 50, 0]
-    }
 
     return (
         <>
@@ -36,9 +32,11 @@ export function Filter() {
                                 onClick={() => setOpenSearch(true)}
                                 onChange={(e) => {
                                     setCategory(e.target.value);
-                                    setStyleForOptions({...styleForOptions,
-                                    height: 'fit-content',
-                                    overflowY: 'scroll'})
+                                    setStyleForOptions({
+                                        ...styleForOptions,
+                                        height: 'fit-content',
+                                        overflowY: 'scroll'
+                                    })
                                 }}
                                 id='actual-filter-input' value={category} autoComplete="off"></input>
                         </div>
@@ -47,7 +45,7 @@ export function Filter() {
                             onClick={() => {
                                 dispatch(setFilterBy({
                                     filterBy: category
-                                })); 
+                                }));
                                 setOpenSearch(false)
                             }
                             }
@@ -61,8 +59,8 @@ export function Filter() {
                         {categories.filter(eachCategory => eachCategory.toLowerCase().match(new RegExp(category.toLowerCase(), 'g'))).map((category) => {
                             return (
                                 <motion.div className="options"
-                                   
-                                    transition={{duration: 1, type: "spring"}}
+
+                                    transition={{ duration: 1, type: "spring" }}
                                     whileTap={{ scale: 0.8 }}
                                     whileHover={{ scale: 1.1 }}
                                     onClick={() => setCategory(category)}

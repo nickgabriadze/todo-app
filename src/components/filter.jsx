@@ -15,7 +15,8 @@ export function Filter() {
 
 
     const [optionStyle, setOptionStyle] = useState({
-        height: '50px'
+        height: '120px',
+        overflowY: 'scroll'
     })
 
     return (
@@ -36,10 +37,9 @@ export function Filter() {
                                     if(category.length > -1){
                                         setOpenSearch(true);
                                     };
-                                    setOptionStyle({...optionStyle,
-                                        height: 'fit-content'})
                                 
-                                    
+                                    setOptionStyle({...optionStyle,
+                                    height: 'fit-content'})
                                 }}
                                 id='actual-filter-input' value={category} autoComplete="off"></input>
                         </div>
@@ -50,9 +50,10 @@ export function Filter() {
                                     filterBy: category
                                 }));
                                 setOpenSearch(false);
-                                setOptionStyle({...optionStyle,
-                                    height: '50'})
+                                
+                                    setCategory('')
                             }
+                            
                             }
                             whileTap={{ scale: 0.8 }}
                             whileHover={{ scale: 1.1 }}

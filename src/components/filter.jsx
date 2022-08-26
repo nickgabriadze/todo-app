@@ -58,7 +58,7 @@ export function Filter() {
                     {openSearch && <div
                         style={styleForOptions}
                         id='options-border'>
-                        {categories.filter(eachCategory => eachCategory.toLowerCase().match(new RegExp(category.toLowerCase(), ''))).map((category) => {
+                        {categories.filter(eachCategory => eachCategory.toLowerCase().match(new RegExp(category.toLowerCase(), 'g'))).map((category) => {
                             return (
                                 <motion.div className="options"
                                    

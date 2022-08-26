@@ -13,10 +13,10 @@ export function Filter() {
     const [category, setCategory] = useState('');
     const categories = Array.from(new Set(useSelector((state) => state.todoReducer).todos.map(obj => obj.taskCategory)));
 
-    const [styleForOptions, setStyleForOptions] = useState({
-        height: '100px',
-        overflowY: 'scroll'
-    });
+
+    const [optionStyle, setOptionStyle] = useState({
+        height: '50px'
+    })
 
     return (
         <>
@@ -29,14 +29,17 @@ export function Filter() {
                             <img id='filter-icon' alt="Filter Icon" src={FilterIcon} />
                             <input
 
-                                onClick={() => setOpenSearch(true)}
+                             
                                 onChange={(e) => {
                                     setCategory(e.target.value);
-                                    setStyleForOptions({
-                                        ...styleForOptions,
-                                        height: 'fit-content',
-                                        overflowY: 'scroll'
-                                    })
+                                    
+                                    if(category.length > -1){
+                                        setOpenSearch(true);
+                                    };
+                                    setOptionStyle({...optionStyle,
+                                        height: 'fit-content'})
+                                
+                                    
                                 }}
                                 id='actual-filter-input' value={category} autoComplete="off"></input>
                         </div>
@@ -46,7 +49,9 @@ export function Filter() {
                                 dispatch(setFilterBy({
                                     filterBy: category
                                 }));
-                                setOpenSearch(false)
+                                setOpenSearch(false);
+                                setOptionStyle({...optionStyle,
+                                    height: '50'})
                             }
                             }
                             whileTap={{ scale: 0.8 }}
@@ -54,7 +59,7 @@ export function Filter() {
                             id='check-icon' src={CheckIcon}></motion.img>
                     </div>
                     {openSearch && <div
-                        style={styleForOptions}
+                        style={optionStyle}
                         id='options-border'>
                         {categories.filter(eachCategory => eachCategory.toLowerCase().match(new RegExp(category.toLowerCase(), 'g'))).map((category) => {
                             return (

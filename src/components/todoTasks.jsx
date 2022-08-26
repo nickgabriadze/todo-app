@@ -11,7 +11,7 @@ export function TodoTasks() {
     const todoTasks = useSelector((state) => state.todoReducer.todos);
     const { weFilter } = useSelector((state) => state.todoReducer);
     const { filterBy, mainFilter } = useSelector((state) => state.todoReducer)
-    console.log(mainFilter)
+    
     return (
         <>
             <div className="todo-tasks" style={{ marginTop: weFilter ? '20px' : '140px' }}>

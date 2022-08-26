@@ -10,11 +10,12 @@ export function TodoTasks() {
 
     const todoTasks = useSelector((state) => state.todoReducer.todos);
     const { weFilter } = useSelector((state) => state.todoReducer);
-    const { filteredTodos } = useSelector((state) => state.todoReducer)
+    const { filterBy, mainFilter } = useSelector((state) => state.todoReducer)
+    console.log(mainFilter)
     return (
         <>
             <div className="todo-tasks" style={{ marginTop: weFilter ? '20px' : '140px' }}>
-                {!weFilter && todoTasks.map((todoTask) => {
+                {!weFilter && todoTasks.filter(todoTask => mainFilter === '' ? todoTask.taskComplete === false || todoTask.taskComplete === true :todoTask.taskComplete === mainFilter).map((todoTask) => {
                     return (
                         <motion.div
                             initial={{ x: -200 }}
@@ -47,7 +48,7 @@ export function TodoTasks() {
                     )
                 })}
 
-                {weFilter && filteredTodos.map((todoTask) => {
+                {weFilter && todoTasks.filter((obj) => obj.taskCategory===filterBy).map((todoTask) => {
                     return (
                         <motion.div 
                         initial={{x: 500}}

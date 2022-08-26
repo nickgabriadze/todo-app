@@ -22,7 +22,6 @@
     flex-direction: row;
     justify-content: center;
     gap: 30px;
-   
 }
 
 #actual-navbar{
@@ -31,4 +30,10 @@
     justify-content: space-between;
     align-items: center;
     
+}
+
+@media (max-width: 600px){
+    #navigation{
+        font-size:9px;
+    }
 }

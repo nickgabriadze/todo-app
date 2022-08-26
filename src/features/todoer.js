@@ -27,7 +27,8 @@ const initialState = {
         }
     ],
     weFilter: false,
-    filteredTodos: []
+    filterBy: "",
+    mainFilter: false
 }
 
 const todoReducer = createSlice({
@@ -72,20 +73,31 @@ const todoReducer = createSlice({
 
         },
 
-        filterTodos: (state, action) => {
-            let filteredOnes = [];
-            const filteringCategory = action.payload.category;
-            for (let i = 0; i < state.todos.length; i++) {
-                if (state.todos[i].taskCategory === filteringCategory) {
-                    filteredOnes.push(state.todos[i])
-                }
+        setFilterBy: (state, action) => {
+            state.filterBy = action.payload.filterBy;
+        },
+
+        changeMainFilter: (state, action) => {
+            if(action.payload.filter === "Completed"){
+                state.mainFilter = true;
             }
-            state.filteredTodos = filteredOnes;
+            if(action.payload.filter === "UnCompleted"){
+                state.mainFilter = false;
+            }
+            if(action.payload.filter === "Every Task"){
+                state.mainFilter = '';
+            }
           
         }
+
+
 
     }
 })
 
-export const { addTask, changeTaskCompleteStatus, changeFilterOption, filterTodos } = todoReducer.actions;
+export const { addTask,
+    changeTaskCompleteStatus,
+    changeFilterOption, setFilterBy,
+    changeMainFilter } = todoReducer.actions;
+
 export default todoReducer.reducer;

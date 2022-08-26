@@ -4,7 +4,7 @@ import FilterIcon from '../icons/filter.svg';
 import CheckIcon from '../icons/check.svg';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
-import { filterTodos } from '../features/todoer';
+import { setFilterBy } from '../features/todoer';
 export function Filter() {
     const dispatch = useDispatch();
     const [category, setCategory] = useState('');
@@ -22,8 +22,8 @@ export function Filter() {
                             id='actual-filter-input' value={category}></input>
                         </div>
                         <motion.img
-                            onClick={() => {dispatch(filterTodos({
-                                category: category
+                            onClick={() => {dispatch(setFilterBy({
+                                filterBy: category
                             }))}}
                             whileTap={{ scale: 0.8 }}
                             whileHover={{ scale: 1.1 }}
